@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aspdotnetdockeraks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aspdotnetdockeraks
+  template:
+    metadata:
+      labels:
+        app: aspdotnetdockeraks 
+    spec:
+      containers:
+        - name: aspdotnetdockeraks 
+          image: ayswarjyaacr.azurecr.io/aspdotnetdockeraks
+          ports:
+          - containerPort: 80
